@@ -100,7 +100,7 @@ internal extension ClientEligibility {
     static let iPhoneMinHeight: CGFloat = 667.0 // iPhone 6 and newer screen sizes
 
     func isDeviceSupported() -> Bool {
-        return UIDevice.current.userInterfaceIdiom == .phone && UIScreen.main.bounds.height >= ClientEligibility.iPhoneMinHeight
+        return UIScreen.main.bounds.height >= ClientEligibility.iPhoneMinHeight
     }
 
     func doClientSideCheck(overrides: EligibilityOverrides? = nil, eligibilityConfiguration: EligibilityConfiguration, passed: @escaping EligibilityCheckPassed, failure: @escaping EligibilityCheckFailure) {
