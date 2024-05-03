@@ -153,7 +153,8 @@ private extension Pusher {
 }
 
 extension Pusher: WebSocketDelegate {
-    func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
+    
+    func didReceive(event: Starscream.WebSocketEvent, client: any Starscream.WebSocketClient) {
         switch event {
         case .text(let text):
             guard let data = text.data(using: .utf8) else {
